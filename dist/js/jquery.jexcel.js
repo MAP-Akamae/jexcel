@@ -529,7 +529,8 @@ var methods = {
                     if ($.fn.jexcel.defaults[$.fn.jexcel.current].editable == true) {
                         $.fn.jexcel.selectedCorner = true;
                     }
-                } else {
+                } else if ((e.target.className + '').indexOf('keepSelection') == -1)  /* Keep item selection when I click in button with classname keepSelection */
+                {
                     // Check if the click was in an jexcel element
                     var table = $(e.target).parent().parent().parent();
 
