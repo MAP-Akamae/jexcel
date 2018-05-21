@@ -1451,7 +1451,14 @@ var methods = {
                         var source = options.columns[position[0]].source;
                     }
 
-                    var html = '<select>';
+                     var tdBackgroundColor = "#FFFFFFF";
+
+                        if ($(cell).css('background-color')) {
+                            tdBackgroundColor = $(cell).css('background-color');
+                        }
+
+                        var html = '<select style="background-color:' + tdBackgroundColor + '">';
+                    
                     for (i = 0; i < source.length; i++) {
                         if (typeof(source[i]) == 'object') {
                             k = source[i].id;
